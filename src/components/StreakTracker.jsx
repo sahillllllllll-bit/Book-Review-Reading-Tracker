@@ -1,63 +1,63 @@
-import { streakData } from "../data/mockData"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Progress } from "@/components/ui/progress"
+import { Flame } from "lucide-react"
+import { useBooks } from "@/context/BookContext"
 
-const StreakTracker = () => {
+export default function StreakTracker() {
+  const { streakData } = useBooks()
+
   return (
-    <div className="card streak-tracker">
-      <div className="card-header">
-        <h3>🔥 Reading Streak</h3>
-      </div>
-      <div className="card-content">
-        <div className="streak-display">
-          <div className="streak-number">{streakData.current}</div>
-          <div className="streak-label">days current streak</div>
-          <div className="streak-longest">Longest: {streakData.longest} days</div>
+    <Card className="h-full">
+      <CardHeader className="pb-4">
+        <CardTitle className="flex items-center gap-2 text-lg">
+          <Flame className="h-6 w-6 text-orange-500" />
+          Reading Streak
+        </CardTitle>
+      </CardHeader>
+      <CardContent className="space-y-6">
+        <div className="text-center">
+          <div className="text-4xl font-bold text-orange-500 mb-2">{streakData.current}</div>
+          <div className="text-sm text-muted-foreground">days current streak</div>
+          <div className="text-xs text-muted-foreground mt-1">Longest: {streakData.longest} days</div>
         </div>
 
-        <div className="week-grid">
+        <div className="flex justify-center gap-2">
           {["S", "M", "T", "W", "T", "F", "S"].map((day, i) => (
-            <div key={i} className="day-column">
-              <div className="day-label">{day}</div>
-              <div className={`day-indicator ${streakData.thisWeek[i] ? "active" : ""}`}>
+            <div key={i} className="text-center">
+              <div className="text-xs text-muted-foreground mb-2">{day}</div>
+              <div
+                className={`w-8 h-8 rounded-full flex items-center justify-center text-xs font-medium ${
+                  streakData.thisWeek[i] ? "bg-orange-500 text-white" : "bg-muted"
+                }`}
+              >
                 {streakData.thisWeek[i] ? "✓" : ""}
               </div>
             </div>
           ))}
         </div>
 
-        <div className="goals">
-          <div className="goal">
-            <div className="goal-header">
+        <div className="space-y-4">
+          <div>
+            <div className="flex justify-between text-sm mb-2">
               <span>Monthly Goal</span>
               <span>
                 {streakData.monthlyProgress}/{streakData.monthlyGoal} books
               </span>
             </div>
-            <div className="progress-bar">
-              <div
-                className="progress-fill"
-                style={{ width: `${(streakData.monthlyProgress / streakData.monthlyGoal) * 100}%` }}
-              ></div>
-            </div>
+            <Progress value={(streakData.monthlyProgress / streakData.monthlyGoal) * 100} className="h-2" />
           </div>
 
-          <div className="goal">
-            <div className="goal-header">
+          <div>
+            <div className="flex justify-between text-sm mb-2">
               <span>Yearly Goal</span>
               <span>
                 {streakData.yearlyProgress}/{streakData.yearlyGoal} books
               </span>
             </div>
-            <div className="progress-bar">
-              <div
-                className="progress-fill"
-                style={{ width: `${(streakData.yearlyProgress / streakData.yearlyGoal) * 100}%` }}
-              ></div>
-            </div>
+            <Progress value={(streakData.yearlyProgress / streakData.yearlyGoal) * 100} className="h-2" />
           </div>
         </div>
-      </div>
-    </div>
+      </CardContent>
+    </Card>
   )
 }
-
-export default StreakTracker
