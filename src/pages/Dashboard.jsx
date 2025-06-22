@@ -45,7 +45,7 @@ export default function Dashboard() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
         >
-          Welcome back, Abhinav!
+          Welcome back,  <span className="underline">Abhinav</span> !
         </motion.h2>
         <motion.p
           className="text-2xl text-muted-foreground"
@@ -168,6 +168,8 @@ export default function Dashboard() {
             <AchievementsSection />
 
           </motion.div>
+            <br />
+            <br />
 
           {/* Currently Reading */}
           <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.6 }}>
@@ -178,6 +180,10 @@ export default function Dashboard() {
               ))}
             </div>
           </motion.div>
+
+          <br />
+            <br />
+
 
           {/* Recently Completed */}
           <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.7 }}>
@@ -194,6 +200,8 @@ export default function Dashboard() {
             {/* <StreakTracker /> */}
             
           </motion.div>
+        <br />
+            <br />
 
           {/* Recent Activity & Goals */}
           <motion.div

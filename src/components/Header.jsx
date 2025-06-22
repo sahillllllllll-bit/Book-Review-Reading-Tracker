@@ -18,7 +18,7 @@ export default function Header() {
         <div className="flex items-center justify-between">
           <div className="flex items-center gap-2 sm:gap-3">
             <BookOpen className="h-6 w-6 sm:h-8 sm:w-8 text-primary" />
-            <h1 className="text-4xl sm:text-2xl font-bold">Librium</h1>
+            <h1 className="text-lg  sm:text-2xl font-bold">Librium</h1>
             <Badge variant="secondary" className="hidden sm:inline ml-2">
               Pro
             </Badge>
