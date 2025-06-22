@@ -61,14 +61,30 @@ export default function Dashboard() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.4 }}
         >
-          <Button size="lg" className="h-14 px-8 text-lg">
-            <Plus className="h-5 w-5 mr-2" />
-            Add New Book
-          </Button>
-          <Button variant="outline" size="lg" className="h-14 px-8 text-lg">
-            <Search className="h-5 w-5 mr-2" />
-            Discover Books
-          </Button>
+
+          
+        <div className="w-full flex justify-center">
+  <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 w-full sm:w-auto">
+    <Button
+      size="lg"
+      className="h-12 sm:h-14 px-4 sm:px-8 text-base sm:text-lg w-full sm:w-auto"
+    >
+      <Plus className="h-5 w-5 mr-2" />
+      Add New Book
+    </Button>
+
+    <Button
+      variant="outline"
+      size="lg"
+      className="h-12 sm:h-14 px-4 sm:px-8 text-base sm:text-lg w-full sm:w-auto"
+    >
+      <Search className="h-5 w-5 mr-2" />
+      Discover Books
+    </Button>
+  </div>
+</div>
+
+
         </motion.div>
       </div>
 

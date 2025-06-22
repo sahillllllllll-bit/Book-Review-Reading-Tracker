@@ -1,7 +1,7 @@
 import { useLocation } from "react-router-dom"
 import Header from "./Header"
 import Navigation from "./Navigation"
-
+import Footer from "./Footer"
 export default function Layout({ children }) {
   const location = useLocation()
 
@@ -12,6 +12,8 @@ export default function Layout({ children }) {
         <Navigation />
         <main className="mt-12">{children}</main>
       </div>
+      <hr/>
+<Footer/>
     </div>
   )
 }
