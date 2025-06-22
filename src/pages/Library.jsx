@@ -45,20 +45,39 @@ export default function Library() {
         animate={{ opacity: 1, y: 0 }}
         transition={{ delay: 0.2 }}
       >
-        <div>
-          <h2 className="text-4xl font-bold mb-2">My Library</h2>
-          <p className="text-xl text-muted-foreground">{allBooks.length} books in your collection</p>
-        </div>
-        <div className="flex items-center gap-6">
-          <Button variant="outline" size="lg" className="h-14 px-6">
-            <Filter className="h-5 w-5 mr-2" />
-            Filter & Sort
-          </Button>
-          <Button size="lg" className="h-14 px-6">
-            <Plus className="h-5 w-5 mr-2" />
-            Add Book
-          </Button>
-        </div>
+
+
+       <div className="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 sm:gap-6 w-full">
+  {/* Left: Title + Count */}
+  <div>
+    <h2 className="text-2xl sm:text-4xl font-bold mb-1 sm:mb-2">My Library</h2>
+    <p className="text-base sm:text-xl text-muted-foreground">
+      {allBooks.length} books in your collection
+    </p>
+  </div>
+
+  {/* Right: Buttons */}
+  <div className="flex flex-col sm:flex-row gap-3 sm:gap-6 w-full sm:w-auto">
+    <Button
+      variant="outline"
+      size="lg"
+      className="h-12 sm:h-14 px-4 sm:px-6 text-sm sm:text-base w-full sm:w-auto"
+    >
+      <Filter className="h-5 w-5 mr-2" />
+      Filter & Sort
+    </Button>
+
+    <Button
+      size="lg"
+      className="h-12 sm:h-14 px-4 sm:px-6 text-sm sm:text-base w-full sm:w-auto"
+    >
+      <Plus className="h-5 w-5 mr-2" />
+      Add Book
+    </Button>
+  </div>
+</div>
+
+
       </motion.div>
 
       {/* Filters */}

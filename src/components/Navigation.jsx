@@ -1,22 +1,24 @@
-"use client"
-import { NavLink, useLocation } from "react-router-dom"
-import { motion } from "framer-motion"
+"use client";
+import { NavLink, useLocation } from "react-router-dom";
+import { motion } from "framer-motion";
 
 const navItems = [
   { path: "/dashboard", label: "Dashboard" },
   { path: "/library", label: "My Library" },
   { path: "/reviews", label: "Reviews" },
   { path: "/social", label: "Social" },
-]
+];
 
 export default function Navigation() {
-  const location = useLocation()
+  const location = useLocation();
 
   return (
-    <nav className="relative">
-      <div className="flex justify-around bg-muted p-1 px-1 rounded-lg">
+    <nav className="relative w-full">
+      <div className="flex flex-wrap sm:flex-nowrap justify-between sm:justify-around bg-muted p-2 rounded-lg overflow-x-auto sm:overflow-visible">
         {navItems.map((item) => {
-          const isActive = location.pathname === item.path || (item.path === "/dashboard" && location.pathname === "/")
+          const isActive =
+            location.pathname === item.path ||
+            (item.path === "/dashboard" && location.pathname === "/");
 
           return (
             <NavLink
@@ -29,7 +31,7 @@ export default function Navigation() {
               {isActive && (
                 <motion.div
                   layoutId="activeTab"
-                  className="absolute inset-0 bg-background shadow-lg rounded-md"
+                  className="absolute inset-0 bg-background   shadow-lg rounded-md"
                   initial={false}
                   transition={{
                     type: "spring",
@@ -40,9 +42,9 @@ export default function Navigation() {
               )}
               <span className="relative z-10">{item.label}</span>
             </NavLink>
-          )
+          );
         })}
       </div>
     </nav>
-  )
+  );
 }
