@@ -45,7 +45,7 @@ export default function Dashboard() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
         >
-          Welcome back, @username!
+          Welcome back, username!
         </motion.h2>
         <motion.p
           className="text-2xl text-muted-foreground"
