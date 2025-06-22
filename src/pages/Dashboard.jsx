@@ -45,7 +45,7 @@ export default function Dashboard() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.2 }}
         >
-          Welcome back, John!
+          Welcome back, @username!
         </motion.h2>
         <motion.p
           className="text-2xl text-muted-foreground"
@@ -134,6 +134,7 @@ export default function Dashboard() {
             </div>
           </CardContent>
         </Card>
+
       </motion.div>
 
       {/* Main Dashboard Grid */}
@@ -160,7 +161,9 @@ export default function Dashboard() {
           </motion.div>
 
           <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ delay: 0.8 }}>
-            <WordCloud />
+            {/* <WordCloud /> */}
+            {/* <StreakTracker /> */}
+            
           </motion.div>
 
           {/* Recent Activity & Goals */}
@@ -201,7 +204,9 @@ export default function Dashboard() {
                 </div>
               </CardContent>
             </Card>
-
+            
+            
+            
             <Card>
               <CardHeader>
                 <CardTitle className="text-xl">Reading Goals & Progress</CardTitle>
@@ -239,17 +244,22 @@ export default function Dashboard() {
                 </div>
               </CardContent>
             </Card>
+
+
           </motion.div>
         </div>
 
         <motion.div
-          className="space-y-8"
+          className="space-y-6"
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 1.0 }}
         >
-          <StreakTracker />
-          <AchievementsSection />
+          <div className="grid grid-cols-1 gap-6">
+            <StreakTracker />
+            <WordCloud />
+            <AchievementsSection />
+          </div>
         </motion.div>
       </div>
     </motion.div>

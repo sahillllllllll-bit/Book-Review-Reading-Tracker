@@ -14,7 +14,7 @@ export default function Navigation() {
 
   return (
     <nav className="relative">
-      <div className="flex space-x-1 bg-muted p-1 rounded-lg max-w-md">
+      <div className="flex justify-around bg-muted p-1 px-1 rounded-lg">
         {navItems.map((item) => {
           const isActive = location.pathname === item.path || (item.path === "/dashboard" && location.pathname === "/")
 
@@ -29,11 +29,11 @@ export default function Navigation() {
               {isActive && (
                 <motion.div
                   layoutId="activeTab"
-                  className="absolute inset-0 bg-background shadow-sm rounded-md"
+                  className="absolute inset-0 bg-background   shadow-lg rounded-md"
                   initial={false}
                   transition={{
                     type: "spring",
-                    stiffness: 500,
+                    stiffness: 400,
                     damping: 30,
                   }}
                 />
