@@ -22,14 +22,14 @@ export default function Navigation() {
             <NavLink
               key={item.path}
               to={item.path}
-              className={`relative px-6 py-3 text-sm font-medium transition-colors rounded-md ${
+              className={`relative px-16 py-3 text-sm font-medium transition-colors rounded-md ${
                 isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"
               }`}
             >
               {isActive && (
                 <motion.div
                   layoutId="activeTab"
-                  className="absolute inset-0 bg-background   shadow-lg rounded-md"
+                  className="absolute inset-0 bg-background shadow-lg rounded-md"
                   initial={false}
                   transition={{
                     type: "spring",

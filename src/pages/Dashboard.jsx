@@ -138,8 +138,21 @@ export default function Dashboard() {
       </motion.div>
 
       {/* Main Dashboard Grid */}
-      <div className="grid grid-cols-1 xl:grid-cols-4 gap-8">
+      <div className="grid grid-cols-1  gap-8"> {/* xl:grid-cols-4 */}
         <div className="xl:col-span-3 space-y-8">
+
+          <motion.div
+            className="grid grid-cols-1 lg:grid-cols-3 gap-8"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.9 }}
+            >
+            <StreakTracker />
+            <WordCloud />
+            <AchievementsSection />
+
+          </motion.div>
+
           {/* Currently Reading */}
           <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ delay: 0.6 }}>
             <h3 className="text-2xl font-bold mb-6">Currently Reading</h3>
@@ -172,7 +185,8 @@ export default function Dashboard() {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.9 }}
-          >
+            >
+            {/* <div> */}
             <Card>
               <CardHeader>
                 <CardTitle className="text-xl">Recent Activity</CardTitle>
@@ -245,20 +259,31 @@ export default function Dashboard() {
               </CardContent>
             </Card>
 
+            {/* </div> */}
 
           </motion.div>
-        </div>
 
+          {/* <motion.div
+            className="grid grid-cols-1 lg:grid-cols-3 gap-8"
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ delay: 0.9 }}
+            >
+            <StreakTracker />
+            <WordCloud />
+            <AchievementsSection />
+
+          </motion.div> */}
+        </div>
+        
         <motion.div
           className="space-y-6"
           initial={{ opacity: 0, x: 30 }}
           animate={{ opacity: 1, x: 0 }}
           transition={{ delay: 1.0 }}
         >
-          <div className="grid grid-cols-1 gap-6">
-            <StreakTracker />
-            <WordCloud />
-            <AchievementsSection />
+          <div className="grid grid-cols-1 gap-16">
+            
           </div>
         </motion.div>
       </div>

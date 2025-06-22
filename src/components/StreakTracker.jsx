@@ -7,21 +7,21 @@ export default function StreakTracker() {
   const { streakData } = useBooks()
 
   return (
-    <Card className="h-full">
+    <Card className="h-full flex flex-col gap-8">
       <CardHeader className="pb-3">
         <CardTitle className="flex items-center gap-2 text-lg">
           <Flame className="h-5 w-5 text-orange-500" />
           Reading Streak
         </CardTitle>
       </CardHeader>
-      <CardContent className="space-y-4">
+      <CardContent className="space-y-4 flex-1 flex flex-col gap-2">
         <div className="text-center">
           <div className="text-3xl font-bold text-orange-500 mb-1">{streakData.current}</div>
           <div className="text-sm text-muted-foreground">days current streak</div>
           <div className="text-xs text-muted-foreground mt-1">Longest: {streakData.longest} days</div>
         </div>
 
-        <div className="flex justify-center gap-1">
+        <div className="flex justify-center gap-2">
           {["S", "M", "T", "W", "T", "F", "S"].map((day, i) => (
             <div key={i} className="text-center">
               <div className="text-xs text-muted-foreground mb-1">{day}</div>
@@ -36,7 +36,7 @@ export default function StreakTracker() {
           ))}
         </div>
 
-        <div className="space-y-3">
+        <div className="space-y-9">
           <div>
             <div className="flex justify-between text-sm mb-1">
               <span>Monthly Goal</span>

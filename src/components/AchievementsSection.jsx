@@ -14,7 +14,7 @@ export default function AchievementsSection() {
   const { achievements } = useBooks()
 
   return (
-    <Card className="h-full">
+    <Card className="h-full flex flex-col gap-8">
       <CardHeader className="pb-3">
         <CardTitle className="flex items-center gap-2 text-lg">
           <Award className="h-5 w-5 text-yellow-500" />
@@ -22,7 +22,7 @@ export default function AchievementsSection() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-3">
-        <div className="grid grid-cols-1 gap-3">
+        <div className="grid grid-cols-1 gap-4">
           {achievements.map((achievement, i) => {
             const IconComponent = iconMap[achievement.icon]
             return (

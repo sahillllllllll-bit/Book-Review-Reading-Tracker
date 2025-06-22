@@ -7,7 +7,7 @@ export default function WordCloud() {
   const { genres } = useBooks()
 
   return (
-    <Card className="col-span-full">
+    <Card className="">
       <CardHeader className="pb-6">
         <CardTitle className="text-2xl">Genre Explorer</CardTitle>
         <p className="text-muted-foreground">Discover your reading patterns across different genres</p>
