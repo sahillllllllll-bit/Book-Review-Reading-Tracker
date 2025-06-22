@@ -1,4 +1,17 @@
 "use client"
+import midnightCover from '../assets/midnight.jpg';
+import duneCover from '../assets/dune.jpg';
+import atomicCover from '../assets/atomic.jpg';
+import sevenCover from '../assets/seven.webp';
+import hailCover from '../assets/hail.jpg';
+import educatedCover from '../assets/educated.jpg';
+
+
+
+
+
+
+
 
 import { createContext, useContext, useState } from "react"
 
@@ -10,7 +23,7 @@ const initialBooks = [
     id: 1,
     title: "The Midnight Library",
     author: "Matt Haig",
-    cover: "/placeholder.svg?height=350&width=250",
+    cover: midnightCover,
     rating: 4.5,
     progress: 85,
     status: "reading",
@@ -30,7 +43,7 @@ const initialBooks = [
     id: 2,
     title: "Atomic Habits",
     author: "James Clear",
-    cover: "/placeholder.svg?height=350&width=250",
+    cover: atomicCover,
     rating: 5,
     progress: 100,
     status: "completed",
@@ -46,11 +59,28 @@ const initialBooks = [
     review: "The most practical book on habit formation I've ever read. The 1% better concept is revolutionary.",
     tags: ["productivity", "habits", "self-improvement"],
   },
+    {
+    id: 6,
+    title: "Educated",
+    author: "Tara Westover",
+    cover:educatedCover,
+    rating: 4.6,
+    progress: 100,
+    status: "completed",
+    genre: "Memoir",
+    reactions: { heart: 41, smile: 8, thumbsUp: 52 },
+    highlights: 15,
+    lastRead: "2 weeks ago",
+    pages: 334,
+    currentPage: 334,
+    dateStarted: "2023-12-01",
+    description: "A memoir about education, family, and the struggle between loyalty and independence.",
+  },
   {
     id: 3,
     title: "Dune",
     author: "Frank Herbert",
-    cover: "/placeholder.svg?height=350&width=250",
+    cover: duneCover,
     rating: 4,
     progress: 45,
     status: "reading",
@@ -69,7 +99,7 @@ const initialBooks = [
     id: 4,
     title: "The Seven Husbands of Evelyn Hugo",
     author: "Taylor Jenkins Reid",
-    cover: "/placeholder.svg?height=350&width=250",
+    cover: sevenCover,
     rating: 4.8,
     progress: 100,
     status: "completed",
@@ -89,7 +119,7 @@ const initialBooks = [
     id: 5,
     title: "Project Hail Mary",
     author: "Andy Weir",
-    cover: "/placeholder.svg?height=350&width=250",
+    cover: hailCover,
     rating: 4.7,
     progress: 30,
     status: "reading",
