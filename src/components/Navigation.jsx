@@ -24,7 +24,7 @@ export default function Navigation() {
             <NavLink
               key={item.path}
               to={item.path}
-              className={`relative px-16 py-3 text-sm font-medium transition-colors rounded-md ${
+              className={`relative px-[160px] py-3 text-sm font-medium transition-colors rounded-md ${
                 isActive ? "text-foreground" : "text-muted-foreground hover:text-foreground"
               }`}
             >
