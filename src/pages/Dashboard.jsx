@@ -49,7 +49,7 @@ export default function Dashboard() {
         </motion.h2>
         <motion.p
           className="text-2xl text-muted-foreground"
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 30 }}element
           animate={{ opacity: 1, y: 0 }}
           transition={{ delay: 0.3 }}
         >

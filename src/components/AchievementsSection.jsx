@@ -22,13 +22,13 @@ export default function AchievementsSection() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-3">
-        <div className="grid grid-cols-1 gap-4">
+        <div className="grid grid-cols-1 gap-4 ">
           {achievements.map((achievement, i) => {
             const IconComponent = iconMap[achievement.icon]
             return (
               <div
                 key={i}
-                className={`flex items-center gap-3 p-3 rounded-lg border ${
+                className={`flex items-center gap-3 p-3  hover:scale-105 transition-transform duration-300  rounded-lg border ${
                   achievement.unlocked ? "bg-primary/5 border-primary/20" : "bg-muted/50"
                 }`}
               >

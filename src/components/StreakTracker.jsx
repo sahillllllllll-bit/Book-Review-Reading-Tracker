@@ -15,13 +15,13 @@ export default function StreakTracker() {
         </CardTitle>
       </CardHeader>
       <CardContent className="space-y-4 flex-1 flex flex-col gap-2">
-        <div className="text-center">
+        <div className="text-center hover:scale-105 transition-transform duration-300 ">
           <div className="text-3xl font-bold text-orange-500 mb-1">{streakData.current}</div>
           <div className="text-sm text-muted-foreground">days current streak</div>
           <div className="text-xs text-muted-foreground mt-1">Longest: {streakData.longest} days</div>
         </div>
 
-        <div className="flex justify-center gap-2">
+        <div className="flex justify-center gap-2 hover:scale-105 transition-transform duration-300 ">
           {["S", "M", "T", "W", "T", "F", "S"].map((day, i) => (
             <div key={i} className="text-center">
               <div className="text-xs text-muted-foreground mb-1">{day}</div>
@@ -37,8 +37,8 @@ export default function StreakTracker() {
         </div>
 
         <div className="space-y-9">
-          <div>
-            <div className="flex justify-between text-sm mb-1">
+          <div className=" hover:scale-105 transition-transform duration-300 ">
+            <div className="flex justify-between text-sm mb-1 ">
               <span>Monthly Goal</span>
               <span>
                 {streakData.monthlyProgress}/{streakData.monthlyGoal} books
@@ -47,7 +47,7 @@ export default function StreakTracker() {
             <Progress value={(streakData.monthlyProgress / streakData.monthlyGoal) * 100} className="h-2" />
           </div>
 
-          <div>
+          <div className=" hover:scale-105 transition-transform duration-300 ">
             <div className="flex justify-between text-sm mb-1">
               <span>Yearly Goal</span>
               <span>
